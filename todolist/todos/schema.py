@@ -1,7 +1,13 @@
 from graphene import relay
 from graphene_django import DjangoConnectionField, DjangoObjectType
 
-from .models import Todo
+from .models import Todo, TodoList
+
+
+class TodoListNode(DjangoObjectType):
+    class Meta:
+        model = TodoList
+        interfaces = (relay.Node, )
 
 
 class TodoNode(DjangoObjectType):
@@ -12,3 +18,4 @@ class TodoNode(DjangoObjectType):
 
 class Query(object):
     todos = DjangoConnectionField(TodoNode)
+    todo_lists = DjangoConnectionField(TodoListNode)
