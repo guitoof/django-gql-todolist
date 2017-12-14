@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'todos',
 ]
 
+GRAPHENE = {
+    'SCHEMA': 'todolist.schema.schema',
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
