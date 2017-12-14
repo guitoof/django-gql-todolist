@@ -18,4 +18,6 @@ class TodoNode(DjangoObjectType):
 
 class Query(object):
     todos = DjangoConnectionField(TodoNode)
+    todo = relay.Node.Field(TodoNode)
     todo_lists = DjangoConnectionField(TodoListNode)
+    todo_list = relay.Node.Field(TodoListNode)
